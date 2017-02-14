@@ -9,7 +9,7 @@ public class Tree implements Comparable<Tree>{
 	//data fields for storing tree information
 	private int tree_id, tree_dbh, zipcode;
 	private double x_sp, y_sp;
-	private String status, health, spc_common, boroname, string_zipcode;
+	private String status, health, spc_common, boroname;
 
 	
 	/**
@@ -264,7 +264,9 @@ public class Tree implements Comparable<Tree>{
 	 */
 	@Override
 	public String toString(){
-		return spc_common;
+		return "ID: "+tree_id+" Diameter: "+tree_dbh+" Status: "+status+" Health: "+health
+				+" Species: "+spc_common+" Borough: "+boroname+" Zipcode: "+zipcode+" x-Pos: "
+				+x_sp+" y-Pos: "+y_sp;
 	}
 
 

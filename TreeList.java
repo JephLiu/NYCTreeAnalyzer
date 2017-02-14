@@ -121,6 +121,6 @@ public class TreeList extends ArrayList<Tree>{
 	 */
 	@Override
 	public String toString(){
-		return "todo";
+		return this.size()+" of tree objects are in this TreeList";
 	}
 }

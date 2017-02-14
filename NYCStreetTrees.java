@@ -215,20 +215,26 @@ public class NYCStreetTrees {
 			System.out.println("Loading file...");
 			Scanner parser = new Scanner(f);
 			parser.nextLine();
+			
 			while(parser.hasNextLine()){
-
-				fileline = splitCSVLine(parser.nextLine());
-				int id = Integer.parseInt(fileline.get(0).trim());
-				int diam = Integer.parseInt(fileline.get(3).trim());
-				String status = fileline.get(6).trim();
-				String health = fileline.get(7).trim();
-				String spc = fileline.get(9).trim();
-				int zip = Integer.parseInt(fileline.get(25).trim());
-				String boro = fileline.get(29).trim();
-				double x = Double.parseDouble(fileline.get(39).trim());
-				double y = Double.parseDouble(fileline.get(40).trim());			 
-				listoftrees.add(new Tree(id, diam, status, health, spc, zip, boro, x, y));
+				try{
+					fileline = splitCSVLine(parser.nextLine());
+					int id = Integer.parseInt(fileline.get(0).trim());
+					int diam = Integer.parseInt(fileline.get(3).trim());
+					String status = fileline.get(6).trim();
+					String health = fileline.get(7).trim();
+					String spc = fileline.get(9).trim();
+					int zip = Integer.parseInt(fileline.get(25).trim());
+					String boro = fileline.get(29).trim();
+					double x = Double.parseDouble(fileline.get(39).trim());
+					double y = Double.parseDouble(fileline.get(40).trim());			 
+					listoftrees.add(new Tree(id, diam, status, health, spc, zip, boro, x, y));
+				}
+				catch(Exception e){
+						//silently skip over invalid lines
+				}
 			}
+			
 			parser.close();
 
 			System.out.println("File has been successfully loaded!");

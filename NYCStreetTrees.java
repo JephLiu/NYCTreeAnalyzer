@@ -215,7 +215,6 @@ public class NYCStreetTrees {
 			System.out.println("Loading file...");
 			Scanner parser = new Scanner(f);
 			parser.nextLine();
-			
 			while(parser.hasNextLine()){
 				try{
 					fileline = splitCSVLine(parser.nextLine());
@@ -236,11 +235,18 @@ public class NYCStreetTrees {
 			}
 			
 			parser.close();
+			
+			//checks for files with no valid lines
+			if(listoftrees.size() == 0){
+				System.err.println("Error: File did not have any valid lines");
+				System.exit(1);
+			}
 
 			System.out.println("File has been successfully loaded!");
 		}
+		//catches exception caused by an empty file
 		catch(Exception e){
-			System.err.println(e);
+			System.err.println("Error: File is empty");
 			System.exit(1);
 		}
 

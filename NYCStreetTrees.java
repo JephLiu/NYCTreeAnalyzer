@@ -37,7 +37,6 @@ public class NYCStreetTrees {
 		populateTreeList(treefile);
 
 
-
 		//user interaction
 		Scanner userinput = new Scanner(System.in);
 		String input;

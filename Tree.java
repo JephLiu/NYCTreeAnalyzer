@@ -265,7 +265,7 @@ public class Tree implements Comparable<Tree>{
 	@Override
 	public String toString(){
 		return "ID: "+tree_id+" Diameter: "+tree_dbh+" Status: "+status+" Health: "+health
-				+" Species: "+spc_common+" Borough: "+boroname+" Zipcode: "+zipcode+" x-Pos: "
+				+" Species: "+spc_common+" Borough: "+boroname+" Zipcode: "+String.format("%05d",zipcode)+" x-Pos: "
 				+x_sp+" y-Pos: "+y_sp;
 	}
 
